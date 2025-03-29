@@ -23,14 +23,33 @@ namespace WinUI3App
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        List<HardDrive> hardDrives = new List<HardDrive>();
         public MainWindow()
         {
             this.InitializeComponent();
+
+            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
+            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
+            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
+            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
+
+
+            myDataGrid.ItemsSource = hardDrives;
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
+            Console.WriteLine("Add Button clicked");
+        }
+
+        private void EditButtonClick(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Edit Button clicked");
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Delete Button clicked");
         }
     }
 }
