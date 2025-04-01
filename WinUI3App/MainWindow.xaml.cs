@@ -14,42 +14,42 @@ using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace WinUI3App
 {
-    /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainWindow : Window
     {
+        // Collection of displayed objects
         ObservableCollection<HardDrive> hardDrives = new ObservableCollection<HardDrive> ();
         public MainWindow()
         {
             this.InitializeComponent();
 
-            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
-            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
-            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
-            hardDrives.Add(new HardDrive("XYZ", "samsung", "HDD", 500));
+            // Add objects to the collection
+            hardDrives.Add(new HardDrive("XYZ", "samsung1", "HDD", 500));
+            hardDrives.Add(new HardDrive("XYZ", "samsung2", "HDD", 500));
+            hardDrives.Add(new HardDrive("XYZ", "samsung3", "HDD", 500));
+            hardDrives.Add(new HardDrive("XYZ", "samsung4", "HDD", 500));
 
-
+            // Link items from the collection to datagrid in UI
             myDataGrid.ItemsSource = hardDrives;
         }
 
+        // Add buttton functionality
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Add Button clicked");
         }
 
+        // Edit button functionality
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Edit Button clicked");
         }
 
+        // Delete buttton functionality
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
+            // Check if selected item is HardDrive type, if it is then 
             if(myDataGrid.SelectedItem is HardDrive selectedDrive)
             {
                 hardDrives.Remove(selectedDrive);
