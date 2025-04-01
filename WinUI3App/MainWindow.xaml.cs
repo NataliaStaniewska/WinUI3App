@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,7 +24,7 @@ namespace WinUI3App
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        List<HardDrive> hardDrives = new List<HardDrive>();
+        ObservableCollection<HardDrive> hardDrives = new ObservableCollection<HardDrive> ();
         public MainWindow()
         {
             this.InitializeComponent();
@@ -49,7 +50,11 @@ namespace WinUI3App
 
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Delete Button clicked");
+            if(myDataGrid.SelectedItem is HardDrive selectedDrive)
+            {
+                hardDrives.Remove(selectedDrive);
+            }
+            
         }
     }
 }
