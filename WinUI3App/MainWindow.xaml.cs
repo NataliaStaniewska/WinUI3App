@@ -37,7 +37,6 @@ namespace WinUI3App
         // Add buttton functionality
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Add Button clicked");
         }
 
         // Edit button functionality
@@ -49,9 +48,10 @@ namespace WinUI3App
         // Delete buttton functionality
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            // Check if selected item is HardDrive type, if it is then 
+            // Check if an item is selected in datagrid
             if(myDataGrid.SelectedItem is HardDrive selectedDrive)
             {
+                // Remove the selected HardDrive from the list
                 hardDrives.Remove(selectedDrive);
             }
             
