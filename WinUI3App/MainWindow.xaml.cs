@@ -37,6 +37,9 @@ namespace WinUI3App
         // Add buttton functionality
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
+            var addHardDriveWindow = new AddHardDriveWindow();
+            addHardDriveWindow.Activate();
+
         }
 
         // Edit button functionality
