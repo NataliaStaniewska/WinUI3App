@@ -14,7 +14,7 @@
 
     <Grid>
         <TextBlock FontSize="39" HorizontalAlignment="Center" VerticalAlignment="Top" Height="64" Width="424" Text="Hard Drives" TextAlignment="Center" />
-        <controls:DataGrid x:Name="myDataGrid" Foreground="Black" AutoGenerateColumns="True" Height="300" Background="AliceBlue" HorizontalAlignment="Center"/>
+        <controls:DataGrid x:Name="myDataGrid" IsReadOnly="True" Foreground="Black" AutoGenerateColumns="True" Height="300" Background="AliceBlue" HorizontalAlignment="Center"/>
         <Button x:Name ="addButton" Click ="AddButtonClick" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="88" Height="32" Content="Add" />
         <Button x:Name ="editButton" Click ="EditButtonClick" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="88" Height="32" Content="Edit" />
         <Button x:Name ="deleteButton" Click ="DeleteButtonClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="88" Height="32" Content="Delete" />
