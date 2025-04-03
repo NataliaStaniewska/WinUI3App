@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -19,7 +19,7 @@ namespace WinUI3App
     public sealed partial class MainWindow : Window
     {
         // Collection of displayed objects
-        ObservableCollection<HardDrive> hardDrives = new ObservableCollection<HardDrive> ();
+        public ObservableCollection<HardDrive> hardDrives = new ObservableCollection<HardDrive> ();
         public MainWindow()
         {
             this.InitializeComponent();
@@ -37,8 +37,8 @@ namespace WinUI3App
         // Add buttton functionality
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-            var addHardDriveWindow = new AddHardDriveWindow();
-            addHardDriveWindow.Activate();
+            var addHardDriveWindow = new AddHardDriveWindow(hardDrives); // Pass the collection to the new window
+            addHardDriveWindow.Activate(); // Display the new window
 
         }
 

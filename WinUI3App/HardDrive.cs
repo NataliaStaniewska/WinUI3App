@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace WinUI3App
 {
-    internal class HardDrive
+    public class HardDrive
     {
         public string model {  get; set; }
         public string manufacturer {  get; set; }
         public string type { get; set; }
-        public int capacity { get; set; }
+        public double capacity { get; set; }
         
 
-        public HardDrive(string model, string manufacturer, string type, int capacity)
+        public HardDrive(string model, string manufacturer, string type, double capacity)
         {
             this.model = model;
             this.manufacturer = manufacturer;
