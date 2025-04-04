@@ -44,9 +44,6 @@ namespace WinUI3App
             _hardDrives.Add(newHardDrive); // Add new record to the collection
             this.Close(); // Close the window after saving
 
-
-
-
         }
 
         // Exit button functionality

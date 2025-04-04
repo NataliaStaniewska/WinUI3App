@@ -45,7 +45,13 @@ namespace WinUI3App
         // Edit button functionality
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Edit Button clicked");
+            // Check if any item is selected
+            if (myDataGrid.SelectedItem is HardDrive selectedDrive)
+            {
+                var editHardDriveWindow = new EditHardDriveWindow(hardDrives, selectedDrive); // Pass the collection to the new window
+                editHardDriveWindow.Activate(); // Display the new window
+            }     
+
         }
 
         // Delete buttton functionality

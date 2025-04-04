@@ -12,6 +12,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="AddHardDriveWindow.xaml" />
+    <None Remove="EditHardDriveWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,12 @@
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250310001" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="EditHardDriveWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

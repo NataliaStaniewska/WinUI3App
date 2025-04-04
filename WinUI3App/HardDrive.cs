@@ -1,35 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WinUI3App
 {
-    public class HardDrive
+    // Represents a Hard Drive with properties that notify UI when changed
+    public class HardDrive : INotifyPropertyChanged
     {
-        public string model {  get; set; }
-        public string manufacturer {  get; set; }
-        public string type { get; set; }
-        public double capacity { get; set; }
-        
-
-        public HardDrive(string model, string manufacturer, string type, double capacity)
+        // Properties for the Hard Drive with change notification
+        private string _model;
+        public string Model
         {
-            this.model = model;
-            this.manufacturer = manufacturer;
-            this.type = type;
-            this.capacity = capacity;
+            get { return _model; }
+            set
+            {
+                if (_model != value)
+                {
+                    _model = value;
+                    OnPropertyChanged(nameof(Model));
+                }
+            }
         }
 
-        
-        public void GetInfo()
+        private string _manufacturer;
+        public string Manufacturer
         {
-            Console.WriteLine("Model: " + this.model);
-            Console.WriteLine("Manufacturer: " + this.manufacturer);
-            Console.WriteLine("Type: " + this.type);
-            Console.WriteLine("Capacity GB: " + this.capacity);
+            get { return _manufacturer; }
+            set
+            {
+                if (_manufacturer != value)
+                {
+                    _manufacturer = value;
+                    OnPropertyChanged(nameof(Manufacturer));
+                }
+            }
+        }
 
+        private string _type;
+        public string Type
+        {
+            get { return _type; }
+            set
+            {
+                if (_type != value)
+                {
+                    _type = value;
+                    OnPropertyChanged(nameof(Type));
+                }
+            }
+        }
+
+        private double _capacity;
+        public double Capacity
+        {
+            get { return _capacity; }
+            set
+            {
+                if (_capacity != value)
+                {
+                    _capacity = value;
+                    OnPropertyChanged(nameof(Capacity));
+                }
+            }
+        }
+
+
+
+        // Constructor to initialize a Hard Drive object
+        public HardDrive(string model, string manufacturer, string type, double capacity)
+        {
+            this.Model = model;
+            this.Manufacturer = manufacturer;
+            this.Type = type;
+            this.Capacity = capacity;
+        }
+
+        // Event that is triggered when a property value changes
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // Method to notify UI that a property has changed
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
